@@ -1,11 +1,7 @@
-# Nictiz-STU3-Zib2017
-This repository contains HL7 FHIR STU3 compliant profiles. The FHIR profiles in this repository are based on the Release 2017 of the Dutch Clinical Building Blocks / Healthcare Information models (Dutch: [Zorginformatiebouwsteen or ZIB](https://zibs.nl/wiki/Zorginformatiebouwstenen "Zorginformatiebouwstenen")). This is the stable branch for the **1.x.x version** of the package.
+# Nictiz-STU3-eAfspraak
+This repository contains HL7 FHIR STU3 compliant profiles for the information standard [eAfspraak](https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2019.01_OntwerpeAfspraak). This is the stable branch for the **1.x.x version** of the package.
 
-Among other things  these FHIR profiles cover the HCIMs/Zibs that are part of the [Basisgegevensset Zorg](https://www.registratieaandebron.nl/wat-is-registreren-aan-de-bron/de-kern-van-registreren-aan-de-bron/basisgegevensset/ "Basisgegevensset Zorg") (BGZ).
-
-The Dutch National ICT institute in the Netherlands (Nictiz) maintains this repository and its contents. A number of contained core profiles have been developed under HL7 Netherlands responsability in cooperation with Nictiz and other parties. These profiles are marked slightly different in the name (nl-core-\*), the url (http://fhir.nl/*) and their publisher (HL7 Netherlands). Profiles by HL7 Netherlands are Patient, Organization, Practitioner, RelatedPerson, HealthcareService, EpisodeOfCare, Location, and datatypes Address and HumanName.
-
-This repository also contains draft materials such as newly designed FHIR profiles that have not gone through a complete review process. Draft materials are differentiated from normative materials by a FHIR status of ‘draft’ and a business version lower than 1.0.0. In addition, draft materials will not be included in the FHIR NPM packages. Normative materials will have an ‘active’ FHIR status.
+The Dutch National ICT institute in the Netherlands (Nictiz) maintains this repository and its contents.
 
 - - - -
 
@@ -13,7 +9,7 @@ This repository also contains draft materials such as newly designed FHIR profil
 
 ### Branching strategy
 
-Since 27th of January 2020, the branch "stable-1.x" (default on GitHub) is considered the stable branch, not "master". The reason for this is that there may be multiple stable branches being maintained simultaniously. This branch corresponds to the HL7 FHIR package that Nictiz publishes.
+The branch "stable-1.x" (default on GitHub) is considered the stable branch, not "master". The reason for this is that there may be multiple stable branches being maintained simultaniously. This branch corresponds to the HL7 FHIR package that Nictiz publishes.
 
 Nictiz uses the following branching strategy for development:
 * Releases correspond with the "stable-xxx" branches. These branches are only updated when there is a new release.
