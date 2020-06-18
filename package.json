@@ -23,6 +23,6 @@
     "canonicals": null,
     "dependencies": {
         "hl7.fhir.r3.core": "3.0.2",
-        "nictiz.fhir.nl.stu3.zib2017": "1.3.x"
+        "nictiz.fhir.nl.stu3.zib2017-prerelease": "2.0.0-beta1"
     }
 }
