@@ -76,7 +76,7 @@
         <valueString value="Please park in P2; P1 is under construction"/>
     </extension>
     <extension url="http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment-OnlineEditable">
-        <extension url="indication">
+        <extension url="Indicator">
             <valueBoolean value="true"/>
         </extension>
         <extension url="OnlineEditableUntil">
@@ -90,7 +90,7 @@
     <status value="booked"/>
     <serviceCategory>
         <coding>
-            <system value=" http://hl7.org/fhir/service-category"/>
+            <system value="http://hl7.org/fhir/service-category"/>
             <code value="27"/>
             <display value="Specialist Medical"/>
         </coding>
