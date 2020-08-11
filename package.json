@@ -1,8 +1,8 @@
 {
     "name": "nictiz.fhir.nl.stu3.eafspraak",
-    "version": "1.0.0-beta1",
+    "version": "1.0.0",
     "canonical": null,
-    "web": "https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2019.01_OntwerpeAfspraak",
+    "web": "https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.1/OntwerpeAfspraak",
     "title": "Nictiz FHIR NL STU3 eAfspraak",
     "description": "Nictiz NL package of FHIR STU3 conformance resources for eAfspraak.",
     "keywords": [
@@ -23,6 +23,6 @@
     "canonicals": null,
     "dependencies": {
         "hl7.fhir.r3.core": "3.0.2",
-        "nictiz.fhir.nl.stu3.zib2017-prerelease": "2.0.0-beta1"
+        "nictiz.fhir.nl.stu3.zib2017": "2.0.x"
     }
 }
