@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="eAfspraak-Appointment" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment" />
@@ -115,6 +116,16 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment-OnlineEditable" />
       </type>
+    </element>
+    <element id="Appointment.extension:OnlineEditable.extension">
+      <path value="Appointment.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="Appointment.extension:OnlineEditable.extension:Indicator">
       <path value="Appointment.extension.extension" />
@@ -247,9 +258,6 @@
       <path value="Appointment.specialty" />
       <sliceName value="specialtyAGB" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="specialty" />
-        </extension>
         <strength value="required" />
         <description value="Specific specialty associated with the agency" />
         <valueSetReference>
@@ -267,9 +275,6 @@
       <path value="Appointment.specialty" />
       <sliceName value="specialtyUZI" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="specialty" />
-        </extension>
         <strength value="required" />
         <description value="Specific specialty associated with the agency" />
         <valueSetReference>
@@ -304,6 +309,10 @@
     </element>
     <element id="Appointment.reason">
       <path value="Appointment.reason" />
+      <short value="DeviatingResult" />
+      <definition value="A deviating result which serves as the reason for the contact." />
+      <comment value="The three child elements of ContactReason (Problem, Procedure and DeviatingResult) are mapped to the FHIR elements reason and indication. The container concept ContactReason is omitted in the mapping. Both FHIR elements convey the information on the reason the appointment as been scheduled to take place, either as a Reference or a CodeableConcept. This is clarified in FHIR R4 becasue the element indication is renamed to reasonReference." />
+      <alias value="AfwijkendeUitslag" />
       <mapping>
         <identity value="art-decor-eafspraak" />
         <map value="eafspraak-dataelement-46" />
@@ -312,12 +321,20 @@
     </element>
     <element id="Appointment.indication">
       <path value="Appointment.indication" />
-      <short value="ContactReason" />
-      <alias value="RedenContact" />
+      <short value="Procedure | Problem" />
+      <definition value="Reason the appointment has been scheduled to take place, as specified using information from another resource. According to the dataset, this is either a Procedure or Problem." />
+      <comment value="The three child elements of ContactReason (Problem, Procedure and DeviatingResult) are mapped to the FHIR elements reason and indication. The container concept ContactReason is omitted in the mapping. Both FHIR elements convey the information on the reason the appointment as been scheduled to take place, either as a Reference or a CodeableConcept. This is clarified in FHIR R4 becasue the element indication is renamed to reasonReference." />
+      <alias value="Verrichting" />
+      <alias value="Probleem" />
       <mapping>
         <identity value="art-decor-eafspraak" />
         <map value="eafspraak-dataelement-42" />
         <comment value="Problem" />
+      </mapping>
+      <mapping>
+        <identity value="art-decor-eafspraak" />
+        <map value="eafspraak-dataelement-44" />
+        <comment value="Procedure" />
       </mapping>
     </element>
     <element id="Appointment.description">
@@ -326,8 +343,8 @@
       <alias value="ContactOnderwerp" />
       <mapping>
         <identity value="art-decor-eafspraak" />
-        <map value="eafspraak-dataelement-4" />
-        <comment value="IdentificationNumber" />
+        <map value="eafspraak-dataelement-21" />
+        <comment value="ContactSubject" />
       </mapping>
     </element>
     <element id="Appointment.start">
