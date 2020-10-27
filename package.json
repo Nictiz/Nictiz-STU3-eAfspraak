@@ -1,6 +1,6 @@
 {
     "name": "nictiz.fhir.nl.stu3.eafspraak",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "canonical": null,
     "web": "https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.1/OntwerpeAfspraak",
     "title": "Nictiz FHIR NL STU3 eAfspraak",
