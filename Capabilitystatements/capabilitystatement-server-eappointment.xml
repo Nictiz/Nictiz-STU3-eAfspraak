@@ -28,7 +28,13 @@
     <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner" />
   </profile>
   <profile>
+    <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole" />
+  </profile>
+  <profile>
     <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
+  </profile>
+  <profile>
+    <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-location" />
   </profile>
   <profile>
     <reference value="http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment" />
