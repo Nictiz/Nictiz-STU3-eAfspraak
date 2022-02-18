@@ -289,23 +289,56 @@
       <fixedUri value="http://fhir.nl/fhir/NamingSystem/uzi-rolcode" />
     </element>
     <element id="Appointment.appointmentType">
-      <path value="Appointment.appointmentType" />
-      <short value="ContactType" />
-      <definition value="The type of contact." />
-      <alias value="ContactType" />
+      <path value="Appointment.appointmentType"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="coding.system"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <short value="ContactType"/>
+      <definition value="The type of contact."/>
+      <alias value="ContactType"/>
+      <mapping>
+        <identity value="art-decor-eafspraak"/>
+        <map value="eafspraak-dataelement-24"/>
+        <comment value="ContactType"/>
+      </mapping>
+    </element>
+    <element id="Appointment.appointmentType:ContactTypeCodelijst">
+      <path value="Appointment.appointmentType"/>
+      <sliceName value="ContactTypeCodelijst"/>
       <binding>
-        <strength value="extensible" />
-        <description value="ContactTypeCodelijst" />
+        <strength value="extensible"/>
+        <description value="ContactTypeCodelijst"/>
         <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1--20171231000000" />
-          <display value="ContactTypeCodelijst" />
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1--20171231000000"/>
+          <display value= "ContactTypeCodelijst"/>
         </valueSetReference>
       </binding>
-      <mapping>
-        <identity value="art-decor-eafspraak" />
-        <map value="eafspraak-dataelement-24" />
-        <comment value="ContactType" />
-      </mapping>
+    </element>
+    <element id="Appointment.appointmentType:ContactTypeCodelijst.coding.system">
+      <path value="Appointment.appointmentType.coding.system"/>
+      <min value= "1"/>
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1"/>
+    </element>
+    <element id="Appointment.appointmentType:NHGTabel14Contactwijze">
+      <path value="Appointment.appointmentType"/>
+      <sliceName value="NHGTabel14Contactwijze"/>
+      <binding>
+        <strength value="extensible"/>
+        <description value="NHGTabel14Contactwijze"/>
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.103.11.3--20110902000000"/>
+          <display value= "NHGTabel14Contactwijze"/>
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Appointment.appointmentType:NHGTabel14Contactwijzer.coding.system">
+      <path value="Appointment.appointmentType.coding.system"/>
+      <min value= "1"/>
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.3.11.60.103.11.3"/>
     </element>
     <element id="Appointment.reason">
       <path value="Appointment.reason" />
