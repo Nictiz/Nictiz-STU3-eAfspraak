@@ -91,6 +91,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.extension:PatientInstructions">
       <path value="Appointment.extension" />
@@ -98,6 +99,7 @@
       <short value="ContactPatientInstructions" />
       <definition value="Remarks associated with the appointment that are not part of the appointment and as such are not influenced by third party edits of the appointment." />
       <alias value="ContactPatiëntInstructie" />
+      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment-PatientInstructions" />
@@ -111,6 +113,7 @@
     <element id="Appointment.extension:OnlineEditable">
       <path value="Appointment.extension" />
       <sliceName value="OnlineEditable" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -126,11 +129,13 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.extension:OnlineEditable.extension:Indicator">
       <path value="Appointment.extension.extension" />
       <sliceName value="Indicator" />
       <alias value="OnlineWijzigbaarIndicator" />
+      <min value="0" />
       <mapping>
         <identity value="art-decor-eafspraak" />
         <map value="eafspraak-dataelement-52" />
@@ -141,6 +146,7 @@
       <path value="Appointment.extension.extension" />
       <sliceName value="OnlineEditableUntil" />
       <alias value="OnlineWijzigbaarTot" />
+      <min value="0" />
       <mapping>
         <identity value="art-decor-eafspraak" />
         <map value="eafspraak-dataelement-53" />
@@ -183,11 +189,13 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.status.extension:OrderStatus">
       <path value="Appointment.status.extension" />
       <sliceName value="OrderStatus" />
       <short value="OrderStatus" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -209,9 +217,12 @@
         <comment value="OrderStatus" />
       </mapping>
     </element>
-    <element id="Appointment.status.extension:OrderStatus.valueCodeableConcept:valueCodeableConcept">
-      <path value="Appointment.status.extension.valueCodeableConcept" />
-      <sliceName value="valueCodeableConcept" />
+    <element id="Appointment.status.extension:OrderStatus.url">
+      <path value="Appointment.status.extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
+    </element>
+    <element id="Appointment.status.extension:OrderStatus.value[x]">
+      <path value="Appointment.status.extension.value[x]" />
       <binding>
         <strength value="extensible" />
         <description value="The status of the order." />
@@ -289,56 +300,59 @@
       <fixedUri value="http://fhir.nl/fhir/NamingSystem/uzi-rolcode" />
     </element>
     <element id="Appointment.appointmentType">
-      <path value="Appointment.appointmentType"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="coding.system"/>
-        </discriminator>
-        <rules value="open"/>
-      </slicing>
-      <short value="ContactType"/>
-      <definition value="The type of contact."/>
-      <alias value="ContactType"/>
+      <path value="Appointment.appointmentType" />
+      <short value="ContactType" />
+      <definition value="The type of contact." />
+      <alias value="ContactType" />
       <mapping>
-        <identity value="art-decor-eafspraak"/>
-        <map value="eafspraak-dataelement-24"/>
-        <comment value="ContactType"/>
+        <identity value="art-decor-eafspraak" />
+        <map value="eafspraak-dataelement-24" />
+        <comment value="ContactType" />
       </mapping>
     </element>
-    <element id="Appointment.appointmentType:ContactTypeCodelijst">
-      <path value="Appointment.appointmentType"/>
-      <sliceName value="ContactTypeCodelijst"/>
+    <element id="Appointment.appointmentType.coding">
+      <path value="Appointment.appointmentType.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Appointment.appointmentType.coding:ContactTypeCodelijst">
+      <path value="Appointment.appointmentType.coding" />
+      <sliceName value="ContactTypeCodelijst" />
       <binding>
-        <strength value="extensible"/>
-        <description value="ContactTypeCodelijst"/>
+        <strength value="required" />
+        <description value="ContactTypeCodelijst" />
         <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1--20171231000000"/>
-          <display value= "ContactTypeCodelijst"/>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1--20171231000000" />
+          <display value="ContactTypeCodelijst" />
         </valueSetReference>
       </binding>
     </element>
-    <element id="Appointment.appointmentType:ContactTypeCodelijst.coding.system">
-      <path value="Appointment.appointmentType.coding.system"/>
-      <min value= "1"/>
-      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1"/>
+    <element id="Appointment.appointmentType.coding:ContactTypeCodelijst.system">
+      <path value="Appointment.appointmentType.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1" />
     </element>
-    <element id="Appointment.appointmentType:NHGTabel14Contactwijze">
-      <path value="Appointment.appointmentType"/>
-      <sliceName value="NHGTabel14Contactwijze"/>
+    <element id="Appointment.appointmentType.coding:NHGTabel14Contactwijze">
+      <path value="Appointment.appointmentType.coding" />
+      <sliceName value="NHGTabel14Contactwijze" />
       <binding>
-        <strength value="extensible"/>
-        <description value="NHGTabel14Contactwijze"/>
+        <strength value="required" />
+        <description value="NHGTabel14Contactwijze" />
         <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.103.11.3--20110902000000"/>
-          <display value= "NHGTabel14Contactwijze"/>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.103.11.3--20110902000000" />
+          <display value="NHGTabel14Contactwijze" />
         </valueSetReference>
       </binding>
     </element>
-    <element id="Appointment.appointmentType:NHGTabel14Contactwijzer.coding.system">
-      <path value="Appointment.appointmentType.coding.system"/>
-      <min value= "1"/>
-      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.3.11.60.103.11.3"/>
+    <element id="Appointment.appointmentType.coding:NHGTabel14Contactwijze.system">
+      <path value="Appointment.appointmentType.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.3.11.60.103.11.3" />
     </element>
     <element id="Appointment.reason">
       <path value="Appointment.reason" />
@@ -595,10 +609,12 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.participant.actor.extension:practitionerRole">
       <path value="Appointment.participant.actor.extension" />
       <sliceName value="practitionerRole" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
