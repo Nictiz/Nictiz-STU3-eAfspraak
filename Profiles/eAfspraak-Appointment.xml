@@ -445,7 +445,7 @@
     <element id="Appointment.participant">
       <path value="Appointment.participant" />
       <short value="ContactWith" />
-      <definition value="The healthcare provider with whom the contact took place. The specialty and role of the healthcare provider can be entered in the HealthcareProvider building block as well." />
+      <definition value="Participants involved in appointment. These may include persons, locations and means (devices and services). The specialty and role of the healthcare provider can be entered in the HealthcareProvider building block as well." />
       <alias value="ContactMet" />
       <mapping>
         <identity value="art-decor-eafspraak" />
