@@ -303,6 +303,7 @@
       <path value="Appointment.appointmentType" />
       <short value="ContactType" />
       <definition value="The type of contact." />
+      <comment value="A code from ContactTypeCodelijst is the ValueSet used within an eOverdracht context. A `.coding` from NHG Table 14 SHOULD only be used when a semantically compatible `.coding` from ContactTypeCodelijst is present as well. to further specificy the type of contact." />
       <alias value="ContactType" />
       <binding>
         <strength value="extensible" />
