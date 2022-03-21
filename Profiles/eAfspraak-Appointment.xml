@@ -217,12 +217,9 @@
         <comment value="OrderStatus" />
       </mapping>
     </element>
-    <element id="Appointment.status.extension:OrderStatus.url">
-      <path value="Appointment.status.extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
-    </element>
-    <element id="Appointment.status.extension:OrderStatus.value[x]">
-      <path value="Appointment.status.extension.value[x]" />
+    <element id="Appointment.status.extension:OrderStatus.valueCodeableConcept:valueCodeableConcept">
+      <path value="Appointment.status.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <binding>
         <strength value="extensible" />
         <description value="The status of the order." />
