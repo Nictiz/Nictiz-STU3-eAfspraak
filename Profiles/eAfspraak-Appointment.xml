@@ -91,6 +91,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.extension:PatientInstructions">
       <path value="Appointment.extension" />
@@ -98,6 +99,7 @@
       <short value="ContactPatientInstructions" />
       <definition value="Remarks associated with the appointment that are not part of the appointment and as such are not influenced by third party edits of the appointment." />
       <alias value="ContactPatiëntInstructie" />
+      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment-PatientInstructions" />
@@ -111,6 +113,7 @@
     <element id="Appointment.extension:OnlineEditable">
       <path value="Appointment.extension" />
       <sliceName value="OnlineEditable" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -126,11 +129,13 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.extension:OnlineEditable.extension:Indicator">
       <path value="Appointment.extension.extension" />
       <sliceName value="Indicator" />
       <alias value="OnlineWijzigbaarIndicator" />
+      <min value="0" />
       <mapping>
         <identity value="art-decor-eafspraak" />
         <map value="eafspraak-dataelement-52" />
@@ -141,6 +146,7 @@
       <path value="Appointment.extension.extension" />
       <sliceName value="OnlineEditableUntil" />
       <alias value="OnlineWijzigbaarTot" />
+      <min value="0" />
       <mapping>
         <identity value="art-decor-eafspraak" />
         <map value="eafspraak-dataelement-53" />
@@ -183,11 +189,13 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.status.extension:OrderStatus">
       <path value="Appointment.status.extension" />
       <sliceName value="OrderStatus" />
       <short value="OrderStatus" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -292,13 +300,13 @@
       <path value="Appointment.appointmentType" />
       <short value="ContactType" />
       <definition value="The type of contact." />
+      <comment value="The ContactTypeCodelijst is the ValueSet used within an eAfspraak context. A `.coding` from NHG Table 14 SHOULD only be used when a semantically compatible `.coding` from ContactTypeCodelijst is present as well, to further specify the type of contact." />
       <alias value="ContactType" />
       <binding>
         <strength value="extensible" />
-        <description value="ContactTypeCodelijst" />
+        <description value="ContactType and NHGTable14v7-ContactType" />
         <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.15.1.1--20171231000000" />
-          <display value="ContactTypeCodelijst" />
+          <reference value="http://nictiz.nl/fhir/ValueSet/ContactTypeCodelijst-en-NHGTable14v7-ContactType" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -562,10 +570,12 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="0" />
     </element>
     <element id="Appointment.participant.actor.extension:practitionerRole">
       <path value="Appointment.participant.actor.extension" />
       <sliceName value="practitionerRole" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
