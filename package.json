@@ -2,7 +2,7 @@
     "name": "nictiz.fhir.nl.stu3.eafspraak",
     "version": "1.0.4",
     "canonical": null,
-    "url": "https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.1/OntwerpeAfspraak",
+    "url": "https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/OntwerpeAfspraak",
     "title": "Nictiz FHIR NL STU3 eAfspraak",
     "description": "Nictiz NL package of FHIR STU3 conformance resources for eAfspraak.",
     "keywords": [
