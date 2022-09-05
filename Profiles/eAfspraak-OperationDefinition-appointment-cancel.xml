@@ -9,9 +9,9 @@
     <contact>
         <name value="Nictiz"/>
         <telecom>
-            <system value="email"/>
-            <value value="info@nictiz.nl"/>
-            <use value="work"/>
+            <system value="url" />
+            <value value="https://www.nictiz.nl" />
+            <use value="work" />
         </telecom>
     </contact>
     <description value="Request to cancel a selected Appointment. This operaton requests the cancelation of an appointment.  The server determines if the nominated appointment can still be cancelled (most appointments can't be cancelled 5 minutes before) and either accepts or rejects the cancellation request and updates the specific slot and appointment resource status accordingly."/>
