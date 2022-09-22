@@ -8,9 +8,9 @@
   <contact>
     <name value="Nictiz" />
     <telecom>
-      <system value="email" />
-      <value value="info@nictiz.nl" />
-      <use value="work" />
+      <system value="url"/>
+      <value value="https://www.nictiz.nl"/>
+      <use value="work"/>
     </telecom>
   </contact>
   <description value="This CapabilityStatement describes the minimal requirements for a client to fulfill the eAppointment use case described for MedMij. The MedMij use cases can be found here: https://informatiestandaarden.nictiz.nl/wiki/MedMij:Vcurrent_FHIR_IG" />
